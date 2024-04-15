@@ -1,0 +1,134 @@
+:root {
+    --IndianRed: #CD5C5C;
+    --LightCoral:	#F08080;
+    --Salmon:	#FA8072;	
+    --DarkSalmon:	#E9967A;	
+    --LightSalmon:	#FFA07A;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    background-color: white;
+    font-family: "Sofia Sans", sans-serif;
+}
+body{
+    font-size: 1.6rem;
+}
+header {
+    height: 15rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #CD5C5C;
+}
+
+
+.encabezado{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo{
+    display: flex;
+    align-items: left;
+}
+a.titulo {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo{
+    width: 40px; 
+    margin-right: 1rem;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin-top: 2rem;
+    margin-left: 4rem;
+}
+
+.sombra{
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.nav{
+    margin-top: 5rem;
+    
+}
+nav.navegacion{
+    display: flex;
+    justify-content: space-between;
+}
+.navega{
+    display: flex;
+    justify-content: space-between;
+    background-color:cadetblue;
+}
+
+.navega a{
+    text-decoration: none;
+    justify-content: space-between;
+    
+}
+
+/* Estilos básicos para el botón */
+.login-button {
+    margin-right: 1rem;
+    padding: 15px 25px;
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Quitamos el borde */
+    border-radius: 5px; /* Añadimos bordes redondeados */
+    cursor: pointer; /* Cambiamos el cursor al pasar sobre el botón */
+    outline: none; /* Quitamos el contorno al hacer clic */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Estilos al pasar el cursor sobre el botón */
+.login-button:hover {
+    background-color: #0056b3; /* Cambiamos el color de fondo */
+}
+
+/* Estilos al hacer clic en el botón */
+.login-button:active {
+    background-color: #1b3270; /* Cambiamos el color de fondo */
+}
+
+/* Estilos básicos para el botón */
+.signup-button {
+    text-decoration: none;
+    padding: 15px 25px;
+    background-color: white; /* Color de fondo azul */
+    color:  #007bff; /* Color del texto */
+    border: 1px solid #007bff; /* Quitamos el borde */
+    border-radius: 5px; /* Añadimos bordes redondeados */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer; /* Cambiamos el cursor al pasar sobre el botón */
+    outline: none; /* Quitamos el contorno al hacer clic */
+}
+
+/* Estilos al pasar el cursor sobre el botón */
+.signup-button:hover {
+    background-color: #fcfcfc96; /* Cambiamos el color de fondo */
+    color: black;
+}
+
+/* Estilos al hacer clic en el botón */
+.signup-button:active {
+    background-color: #fcfcfc96; /* Cambiamos el color de fondo */
+    color: black;
+}

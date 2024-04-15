@@ -1,0 +1,30 @@
+{
+  "name": "cursolinux",
+  "version": "1.0.0",
+  "description": "Curso de Linux",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JahirSamperio/cursolinux.git"
+  },
+  "author": "Jahir Alberto Samperio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JahirSamperio/cursolinux/issues"
+  },
+  "homepage": "https://github.com/JahirSamperio/cursolinux#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "mysql2": "^3.9.4",
+    "nodemon": "^3.1.0",
+    "sequelize": "^6.37.3"
+  }
+}
