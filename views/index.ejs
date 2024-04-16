@@ -8,6 +8,7 @@
         rel="stylesheet">
     <link rel="preload" href="../css/styles.css" as="styles">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../img/linux.png" type="image/x-icon">
     <title>Curso Linux | Inicio</title>
 </head>
 
@@ -69,7 +70,7 @@
                                 <h2 class="title-text"><%= leccion.nombre %></h2>
                             </div>
                             <div class="half-right">
-                                <h2><strong>Lección <%= index + 1 %>:</strong><%= leccion.nombre %></h2>
+                                <h2><strong>Lección <%= index + 1 %>:</strong> <%= leccion.nombre %></h2>
                                 <p><%= leccion.descripcion %></p>
                                 <p>Nivel: <%= leccion.nivel %></p>
                                 <p>Progreso: <%= leccion.progreso %></p>
@@ -84,7 +85,6 @@
                             </div>
                         </div>
                         <% }); %>
-
                 </ul>
             </section>
         </div>
