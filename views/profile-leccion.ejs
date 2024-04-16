@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+            rel="stylesheet">
+        <link rel="preload" href="../css/styles.css" as="styles">
+        <link rel="stylesheet" href="../css/styles.css">
+        <title>Curso Linux | Inicio</title>
+    </head>
+    
+    <body>
+    
+        <div class="barra">
+            <div class="encabezado">
+                <a class="logo" href="index.html">
+                    <img src="../img/linux.png" class="logo">
+                    <a class="titulo" style="text-decoration: none;">GNU/Linux</a>
+                </a>
+            </div>
+            <nav class="navegacion">
+                <a href="http://localhost:8080/" class="titulo">Inicio</a>
+
+            </nav>
+        </div>
+        <hr>
+        <div class="contenido-leccion">
+            <aside class="menu-lateral">
+                <h2>Temario</h2>
+                <ul>
+                    <% temario.forEach((item) => { %>
+                        <li><a href="#<%= item.titulo %>"><strong><%= item.orden %>.-</strong> <%= item.titulo %></a></li>
+                    <% }); %>
+                    <li><a href="http://localhost:8080/"><strong><- Regresar</strong></a></li>
+                </ul>
+            </aside>
+
+            <div class="perfil">
+
+                <div class="contenedor sombra">
+                    <h2 style="text-align: center;"><%= leccion.nombre %></h2>
+                    <p>
+                        <%= leccion.descripcion %>
+                    </p>
+                    <% temario.forEach((item) => { %>
+                        <div id="<%= item.titulo %>" class="container-cursos">
+                            <h2><%= item.titulo %></h2>
+                            <h3><%= item.descripcion %></h3>
+                            <p style="margin-bottom: 70px;"><%= item.contenido %></p>
+
+                        <% }); %>
+                    </div>
+                    <a href="" class="continue-button">Completar</a>
+                </div>
+            
+            </div>
+        </div>
+    </body>
+    
+    </html>

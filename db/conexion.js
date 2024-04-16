@@ -7,7 +7,8 @@ const db = new Sequelize (process.env.BD_NOMBRE, process.env.BD_USER, process.en
     port: process.env.BD_PORT,
     dialect: 'mysql',
     define:{
-        timestamps: true
+        timestamps: true,
+        freezeTableName: true
     },
     pool: {
         max: 5,

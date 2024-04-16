@@ -1,14 +1,14 @@
 import Leccion from '../models/Leccion.js'
 
-const lecciones = async (req, res) => {
+const leccionesController = async (req, res) => {
     try {
         const lecciones = await Leccion.findAll();
-
-        res.render('index'), {
+        res.render('index', {
             lecciones: lecciones
-        }
+        });
         
     } catch (error) {
+        console.log(error);
         return res.status(500).json({
             error: "Error en el servidor"
         })
@@ -29,5 +29,6 @@ const formularioRegistro = (req, res) => {
 
 export {
     formularioAuth,
-    formularioRegistro
+    formularioRegistro,
+    leccionesController
 }

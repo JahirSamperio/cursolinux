@@ -21,8 +21,8 @@
             </a>
         </div>
         <nav class="navegacion">
-            <a href="http://localhost:8080/home/auth" class="login-button">Iniciar sesión</a>
-            <a href="http://localhost:8080/home/signup" class="signup-button">Crear cuenta</a>
+            <a href="http://localhost:8080/auth" class="login-button">Iniciar sesión</a>
+            <a href="http://localhost:8080/signup" class="signup-button">Crear cuenta</a>
         </nav>
     </div>
     <hr>
@@ -62,7 +62,30 @@
         <div class="container-cursos">
             <section class="secciones">
                 <h3>Lecciones</h3>
+                <ul>
+                    <% lecciones.forEach((leccion, index)=> { %>
+                        <div class="card">
+                            <div class="half-left">
+                                <h2 class="title-text"><%= leccion.nombre %></h2>
+                            </div>
+                            <div class="half-right">
+                                <h2><strong>Lección <%= index + 1 %>:</strong><%= leccion.nombre %></h2>
+                                <p><%= leccion.descripcion %></p>
+                                <p>Nivel: <%= leccion.nivel %></p>
+                                <p>Progreso: <%= leccion.progreso %></p>
+                                <div class="botones-seccion">
+                                    <div id="evaluacion">
+                                        <a href="http://localhost:8080/leccion/<%= leccion.id_leccion %>" class="evaluacion-button">Evaluacion</a>
+                                    </div>
+                                    <div id="continuar">
+                                        <a href="http://localhost:8080/leccion/<%= leccion.id_leccion %>" class="continue-button">Continuar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
 
+                </ul>
             </section>
         </div>
     </div>
