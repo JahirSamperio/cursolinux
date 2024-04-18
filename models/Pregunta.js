@@ -8,7 +8,7 @@ const Pregunta = db.define('pregunta', {
         allowNull: false,
         autoIncrement: true
     },
-    id_cuestionario: {
+    id_leccion: {
         type: DataTypes.INTEGER,
         allowNull: false
     },

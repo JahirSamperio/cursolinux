@@ -2,6 +2,9 @@ import express from 'express';
 import db from '../db/conexion.js';
 import cors from 'cors';
 import routes from '../routes/routes.js'
+import bodyParser from 'body-parser';
+import csrf from 'csurf';
+import cookieParser from 'cookie-parser';
 
 class Server {
     constructor() {
@@ -36,6 +39,14 @@ class Server {
 
         //Lectura y parseo del body
         this.app.use(express.json());
+
+        this.app.use(express.urlencoded({ extended: true }));
+
+        //Habilitar cookie parser
+        this.app.use(cookieParser());
+
+        //Habilitar CSRF
+        // this.app.use(csrf({cookie: true}));
 
     }
 

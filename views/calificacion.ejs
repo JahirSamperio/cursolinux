@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+            rel="stylesheet">
+        <link rel="preload" href="../css/styles.css" as="styles">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="icon" href="../img/linux.png" type="image/x-icon">
+
+        <title>Curso Linux | Inicio</title>
+    </head>
+    
+    <body>
+    
+        <div class="barra">
+            <div class="encabezado">
+                <a class="logo" href="index.html">
+                    <img src="../img/linux.png" class="logo">
+                    <a class="titulo" style="text-decoration: none;">GNU/Linux</a>
+                </a>
+            </div>
+            <nav class="navegacion">
+                <a href="http://localhost:8080/" class="titulo">Inicio</a>
+
+            </nav>
+        </div>
+        <hr>
+        <div class="contenido-leccion">
+            <div class="perfil">
+                <div class="contenedor sombra">
+            
+                        <h2 style="text-align: center;"><strong>Cuestionario: </strong><%= leccion.nombre %></h2>
+                        <div class="resultado">
+                            <h2 class="resul-text">Tu calificacion : <%= calificacion %> </h2>
+                        </div>
+                        <h3 class="title-text">Respuestas correctas</h3>
+                        <% preguntas.forEach((pregunta) => { %>
+                            <div class="container-cursos">
+                                <h3><%= pregunta.pregunta %></h3>
+                        
+                                <!-- Iterar sobre las opciones -->
+                                <% pregunta.opciones.forEach((opcion) => { %>
+                                    <div class="container-cursos">
+                                        <label>
+                    
+                                            <%= opcion.opcion %>
+                                        </label>
+                                    </div>
+                                <% }); %>
+                            </div>
+                        <% }); %>
+                        <!-- Campo oculto para enviar el ID de la lección -->
+                        <input type="hidden" name="id_leccion" value="<%= leccion.id_leccion %>">
+
+                        <!-- Botón para calcular el resultado -->
+                        <div style="display: flex; justify-content: center; margin-top: 3%;">
+                            <a  class="continue-button" href="http://localhost:8080" style="align-items: center;">Regresar</a>
+                        </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </body>
+    
+    </html>

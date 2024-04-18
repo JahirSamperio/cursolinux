@@ -22,8 +22,13 @@
             </a>
         </div>
         <nav class="navegacion">
-            <a href="http://localhost:8080/auth" class="login-button">Iniciar sesión</a>
-            <a href="http://localhost:8080/signup" class="signup-button">Crear cuenta</a>
+            <% if (!isAuthenticated) { %>
+                <a href="http://localhost:8080/auth" class="login-button">Iniciar sesión</a>
+                <a href="http://localhost:8080/signup" class="signup-button">Crear cuenta</a>
+            <% } %>
+            <% if (isAuthenticated) { %>
+                <a href="http://localhost:8080/" class="login-button">Cerrar sesión</a>
+            <% } %>
         </nav>
     </div>
     <hr>
@@ -70,13 +75,12 @@
                                 <h2 class="title-text"><%= leccion.nombre %></h2>
                             </div>
                             <div class="half-right">
-                                <h2><strong>Lección <%= index + 1 %>:</strong> <%= leccion.nombre %></h2>
+                                <h2 class=""><strong>Lección <%= index + 1 %>:</strong> <%= leccion.nombre %></h2>
                                 <p><%= leccion.descripcion %></p>
-                                <p>Nivel: <%= leccion.nivel %></p>
-                                <p>Progreso: <%= leccion.progreso %></p>
+                                <p><strong>Nivel: </strong><%= leccion.nivel %></p>
                                 <div class="botones-seccion">
                                     <div id="evaluacion">
-                                        <a href="http://localhost:8080/leccion/<%= leccion.id_leccion %>" class="evaluacion-button">Evaluacion</a>
+                                        <a href="http://localhost:8080/evaluacion/<%= leccion.id_leccion %>" class="evaluacion-button">Evaluacion</a>
                                     </div>
                                     <div id="continuar">
                                         <a href="http://localhost:8080/leccion/<%= leccion.id_leccion %>" class="continue-button">Continuar</a>
@@ -90,5 +94,4 @@
         </div>
     </div>
 </body>
-
 </html>

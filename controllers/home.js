@@ -3,8 +3,10 @@ import Leccion from '../models/Leccion.js'
 const leccionesController = async (req, res) => {
     try {
         const lecciones = await Leccion.findAll();
+        
         res.render('index', {
-            lecciones: lecciones
+            lecciones: lecciones,
+            isAuthenticated: false
         });
         
     } catch (error) {

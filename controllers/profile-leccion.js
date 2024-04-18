@@ -14,9 +14,9 @@ const perfilLeccion = async (req, res) => {
         
     } catch (error) {
         console.log(error);
-        return res.status(500).json({
-            error: "Error en el servidor"
-        })
+        return res.render('alertas', {
+            mensaje: "Error en el servidor:("
+        });
     }
 }
 

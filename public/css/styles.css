@@ -146,6 +146,8 @@ nav.navegacion{
 
 .half-left {
     flex: 1;
+    display: grid;
+    align-items: center;
 }
 .half-right {
     flex: 2
@@ -156,6 +158,34 @@ nav.navegacion{
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 0 0 5px #ffd700,
+    0 0 10px #ffd700,
+    0 0 20px #ffd700,
+    0 0 40px #ffd700,
+    0 0 80px #ffd700,
+    0 0 90px #ffd700,
+    0 0 100px #ffd700,
+    0 0 150px #ffd700;
+    animation: neon 1.5s infinite alternate;
+    
+}
+
+
+.resul-text {
+    color: black; /* Color del texto */
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 
+    0 0 5px #00FF00,
+    0 0 10px #00FF00,
+    0 0 20px #00FF00,
+    0 0 40px #00FF00,
+    0 0 80px #00FF00,
+    0 0 90px #00FF00,
+    0 0 100px #00FF00,
+    0 0 150px #00FF00;
+    animation: neon 1.5s infinite alternate;
     
 }
 .continue-button {
@@ -275,4 +305,9 @@ nav.navegacion{
     font-weight: bold;
     transition: background-color 0.3s ease;
 
+}
+
+.resultado {
+    display: flex;
+    justify-content: center;
 }
