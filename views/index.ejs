@@ -22,13 +22,14 @@
             </a>
         </div>
         <nav class="navegacion">
-            <% if (!isAuthenticated) { %>
-                <a href="http://localhost:8080/auth" class="login-button">Iniciar sesión</a>
-                <a href="http://localhost:8080/signup" class="signup-button">Crear cuenta</a>
-            <% } %>
-            <% if (isAuthenticated) { %>
-                <a href="http://localhost:8080/" class="login-button">Cerrar sesión</a>
-            <% } %>
+            <% if (autenticado) { %>
+                <form action="http://localhost:8080/signout" method="post">
+                    <button type="submit" class="login-button" style="background-color: red;">Cerrar sesión</button>
+                </form>
+                <% } else { %>
+                    <a href="http://localhost:8080/auth" class="login-button">Iniciar sesión</a>
+                    <a href="http://localhost:8080/signup" class="signup-button">Crear cuenta</a>
+                    <% } %>
         </nav>
     </div>
     <hr>

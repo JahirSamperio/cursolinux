@@ -5,6 +5,8 @@ import { generarJWT, generateId } from "../helpers/tokens.js";
 import bcrypt from 'bcrypt';
 import { Sequelize } from 'sequelize';
 import { Leccion } from '../models/asosiaciones.js'
+import jwt from 'jsonwebtoken';
+
 
 
 
@@ -64,14 +66,28 @@ const autenticar = async (req = request, res = response) => {
             where: { email }
         })
 
-        const isAuthenticated = true;
         const lecciones = await Leccion.findAll();
 
-        res.render('index', {
-            lecciones: lecciones,
-            isAuthenticated: isAuthenticated,
-            id_usuario
-        });
+        const {_token} = req.cookies;
+
+        let tokenId;
+        let autenticado;
+        if(_token){
+            autenticado=true;
+            const token = jwt.verify(_token, process.env.JWT_SECRET);
+            tokenId = token.id;
+        } else {
+            autenticado=false
+        }
+
+        // res.render('index', {
+        //     lecciones: lecciones,
+        //     autenticado: autenticado,
+        //     token: tokenId,
+        //     id_usuario
+        // });
+        // Redireccionar o enviar una respuesta JSON u HTML indicando que la sesión se ha cerrado
+        res.redirect('http://localhost:8080');
 
     } catch (err) {
         console.log(err);

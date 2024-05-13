@@ -40,6 +40,7 @@ class Server {
         //Lectura y parseo del body
         this.app.use(express.json());
 
+        // Middleware para analizar solicitudes con datos codificados en URL
         this.app.use(express.urlencoded({ extended: true }));
 
         //Habilitar cookie parser
